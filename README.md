@@ -23,7 +23,7 @@ Der Standard-Build ist ein nicht indexierbarer Entwurf. Für die abschließende 
 - Die sechs unterschiedlichen persönlichen Originalfotos sind integriert; Logos wurden lokal gespeichert.
 - Der Calendly-Link wurde anhand der aktuell funktionierenden OnePage-Verknüpfung korrigiert. Die frühere Variante mit `kennenlerngespraech` führt zu einer 404-Seite.
 - Texte, interne Ziele, Bilder und JSON-LD werden mit `npm run check` geprüft.
-- Die Live-Startseite wurde im Desktop-Browser visuell geprüft. Alle sechs persönlichen Fotos laden; die vier Leistungsseiten sind erreichbar. Ein visueller Smartphone-Test steht aus.
+- Die Live-Startseite wurde nach dem Git-Deploy im Desktop-Browser visuell geprüft. Der Studio-Minimal-Look ist auf der permanenten Vercel-Adresse sichtbar; alle sechs persönlichen Fotos laden und die vier Leistungsseiten sind erreichbar. Ein visueller Smartphone-Test steht aus.
 - Die API-Projektanlage wurde mit HTTP 403 verweigert. Der autorisierte Browser-Fallback war erfolgreich: Vercel Drop meldet Ready. Live: https://thomas-olesch-homepage.vercel.app/
 - Bereitstellung am 11.10.2026 per Direkt-Upload des statischen Builds. Das Vercel-Projekt ist jetzt mit dem GitHub-Repository verbunden; neue Pushes auf `main` lösen Production Deployments aus.
 - Die öffentliche Prüffassung enthält weiterhin noindex,follow. Die eigene Domain, abschließende SEO-Publikation und automatische Git-Anbindung stehen aus.
@@ -36,7 +36,7 @@ Der Standard-Build ist ein nicht indexierbarer Entwurf. Für die abschließende 
 
 Die gewählte Variante 1 ist im Quellcode umgesetzt: ruhiger schwarzer Hintergrund, orange Akzente, große Typografie, pillenförmige Buttons und mehr Freiraum. Das originale Studiofoto geht durch Lighten-Mischung und einen unteren Verlauf in den Hintergrund über. Alle persönlichen Fotos behalten ihre natürlichen Seitenverhältnisse; Kopf und Haare werden nicht durch CSS abgeschnitten. Die vier Leistungsseiten und Rechtstexte nutzen dieselbe Gestaltung.
 
-Build und Offline-Check sind bestanden (8 Seiten, 159 interne Verweise). Die vorhandene Vercel-GitHub-App hat Zugriff auf das Homepage-Repository; der erste Git-Deploy wird durch diesen Dokumentations-Commit ausgelöst und anschließend live geprüft.
+Build und Offline-Check sind bestanden (8 Seiten, 159 interne Verweise). Die vorhandene Vercel-GitHub-App hat Zugriff auf das Homepage-Repository; der Designstand ist über den Git-Deploy auf der permanenten Vercel-Adresse veröffentlicht und im Desktop-Browser geprüft.
 
 ## Angebotsentscheidung
 
