@@ -17,14 +17,16 @@ Repository `thomasech7-dot/thomas-olesch-homepage` importieren, Framework `Other
 
 Der Standard-Build ist ein nicht indexierbarer Entwurf. Für die abschließende Veröffentlichung `SITE_URL` auf den bestätigten HTTPS-Ursprung setzen und `SITE_PUBLISH=true` hinzufügen. Der Build erzeugt dann kanonische URLs, Social-Media-Metadaten und Sitemap; Leistungsseiten werden indexierbar. Rechtstexte und die 404-Seite bleiben noindex. Die eigene Domain und Weiterleitungen der bisherigen URLs müssen gesondert verbunden werden.
 
-## Prüfstand / offene Veröffentlichung
+## Live-Stand und Prüfungen
 
 - Originalseite am 11.10.2026 abgerufen und mit Pure Persuasion AI analysiert.
 - Die sechs unterschiedlichen persönlichen Originalfotos sind integriert; Logos wurden lokal gespeichert.
 - Der Calendly-Link wurde anhand der aktuell funktionierenden OnePage-Verknüpfung korrigiert. Die frühere Variante mit `kennenlerngespraech` führt zu einer 404-Seite.
 - Texte, interne Ziele, Bilder und JSON-LD werden mit `npm run check` geprüft.
-- Ein visueller Browsertest war in dieser Umgebung nicht verfügbar. Vor Veröffentlichung Desktop und Smartphone prüfen.
-- Vercel hat die Projektanlage mit HTTP 403 verweigert. Es wurde keine neue Live-Veröffentlichung bestätigt.
+- Die Live-Startseite wurde im Desktop-Browser visuell geprüft. Alle sechs persönlichen Fotos laden; die vier Leistungsseiten sind erreichbar. Ein visueller Smartphone-Test steht aus.
+- Die API-Projektanlage wurde mit HTTP 403 verweigert. Der autorisierte Browser-Fallback war erfolgreich: Vercel Drop meldet Ready. Live: https://thomas-olesch-homepage.vercel.app/
+- Bereitstellung am 11.10.2026 per Direkt-Upload des statischen Builds. Das Vercel-Projekt ist noch nicht mit GitHub verbunden; Änderungen am Repository werden daher nicht automatisch veröffentlicht.
+- Die öffentliche Prüffassung enthält weiterhin noindex,follow. Die eigene Domain, abschließende SEO-Publikation und automatische Git-Anbindung stehen aus.
 - Die Impressumsanschrift wurde aus der Originalseite übernommen; vor Veröffentlichung auf Aktualität prüfen.
 - Die Datenschutzhinweise entsprechen der geplanten statischen Bereitstellung. Hostingvereinbarungen und tatsächlich aktivierte Dienste müssen vor Veröffentlichung abgeglichen werden.
 - Kein Tracking, kein eingebettetes Calendly, keine externen Schriftendienste, kein Formularserver. Kontakt erfolgt per E-Mail oder über den externen Calendly-Link.
