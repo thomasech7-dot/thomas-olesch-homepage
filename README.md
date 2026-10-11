@@ -32,6 +32,12 @@ Der Standard-Build ist ein nicht indexierbarer Entwurf. Für die abschließende 
 - Kein Tracking, kein eingebettetes Calendly, keine externen Schriftendienste, kein Formularserver. Kontakt erfolgt per E-Mail oder über den externen Calendly-Link.
 - Kein Ranking-/Umsatzversprechen. GEO ist die Aufbereitung verständlicher, zuordenbarer Inhalte; ein systemübergreifender KI-Sichtbarkeitstest wurde nicht durchgeführt.
 
+## Designstand: Studio Minimal
+
+Die gewählte Variante 1 ist im Quellcode umgesetzt: ruhiger schwarzer Hintergrund, orange Akzente, große Typografie, pillenförmige Buttons und mehr Freiraum. Das originale Studiofoto geht durch Lighten-Mischung und einen unteren Verlauf in den Hintergrund über. Alle persönlichen Fotos behalten ihre natürlichen Seitenverhältnisse; Kopf und Haare werden nicht durch CSS abgeschnitten. Die vier Leistungsseiten und Rechtstexte nutzen dieselbe Gestaltung.
+
+Build und Offline-Check sind bestanden (8 Seiten, 159 interne Verweise). Dieser neue Designstand ist noch nicht auf der permanenten Vercel-Adresse veröffentlicht oder visuell live geprüft. Der direkte Projekt-Upload ist im verwendbaren Browser nur als Drag-and-drop verfügbar; der Dateiauswahl-Import meldete bei bestehendem Projektnamen einen Konflikt. Für den dauerhaften Git-Deploy fehlt die Freigabe des Homepage-Repositorys für die vorhandene Vercel-GitHub-App. Auf die zusätzliche Berechtigung wurde gewartet; die ursprüngliche Live-Version bleibt bestehen.
+
 ## Angebotsentscheidung
 
 Webdesign und Copywriting bilden den Kern. SEO/GEO, E-Mail-Marketing sowie Social Media und Content ergänzen die Website. Preise und Lieferzeiten werden auf Projektbasis vereinbart. Technische E-Mail-Einrichtung, laufende Veröffentlichung und Anzeigenmanagement sind nur bei gesonderter Vereinbarung enthalten.

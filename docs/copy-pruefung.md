@@ -21,7 +21,7 @@ Geprüft wird der sichtbare Hauptinhalt der Startseite und vier Leistungsseiten.
 
 | Seite | Wörter | Geviertstriche | Halbgeviertstriche mit Leerzeichen | Negationsanfänge | Stell-dir-vor-Einstiege |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| index.html | 1098 | 0 | 0 | 0 | 0 |
+| index.html | 1050 | 0 | 0 | 0 | 0 |
 | webdesign-copywriting/index.html | 395 | 0 | 0 | 0 | 0 |
 | seo-geo/index.html | 402 | 0 | 0 | 0 | 0 |
 | email-marketing/index.html | 379 | 0 | 0 | 0 | 0 |

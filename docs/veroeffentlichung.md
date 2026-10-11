@@ -22,3 +22,9 @@ Die permanente Vercel-Adresse zeigt die Homepage. Die Gestaltung der Startseite 
 - Automatische GitHub-Anbindung. Der aktuelle Upload wird nicht durch Repository-Pushes aktualisiert.
 - Finale Suchmaschinen-Publikation: Der Stand ist öffentlich erreichbar, bleibt aber mit noindex,follow eine Prüffassung. SITE_URL und SITE_PUBLISH werden erst für den bestätigten Veröffentlichungs-Ursprung gesetzt.
 - Aktuelle Impressumsdaten und die tatsächlich genutzten Hostingdienste abschließend abgleichen.
+
+## Gewählte Designvariante 1: Studio Minimal
+
+Der neue Quellstand vom 11. Oktober 2026 enthält die ausgewählte Gestaltung und Originalfotos ohne CSS-Beschnitt. Offline geprüft: 8 Seiten, 159 interne Verweise, JSON-LD gültig. Build erfolgreich. Noch keine visuelle Live-Prüfung dieses neuen Standes.
+
+Der ZIP-Upload auf /new/drop wurde angenommen (23 Dateien). Der Versuch mit dem bestehenden Projektnamen wurde mit „Project already exists“ abgelehnt und hat kein weiteres Projekt angelegt. Im vorhandenen Dashboard gibt es für diesen Browser keine benutzbare Dateiauswahl zum Aktualisieren; die Oberfläche bietet dafür Drag-and-drop an. Die API sieht das im Browser vorhandene Projekt nicht (404). Die Git-Auswahl listet nur webseite-roentgen. Das Homepage-Repository muss der vorhandenen Vercel-GitHub-App gesondert freigegeben werden; dies ist eine zusätzliche Berechtigung und steht zur Zustimmung aus.

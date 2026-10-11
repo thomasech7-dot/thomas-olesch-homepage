@@ -23,7 +23,8 @@ for (const file of files.filter(f => f.endsWith('.html'))) {
   }
   for (const [,ref] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
     if (/^(https?:|mailto:|tel:)/.test(ref)) continue;
-    const [route,fragment] = ref.split('#');
+    const [routeWithQuery,fragment] = ref.split('#');
+    const route = routeWithQuery.split('?')[0];
     let target = route ? path.join(root,route.replace(/^\//,'')) : file;
     try {
       if ((await stat(target)).isDirectory()) target=path.join(target,'index.html');
