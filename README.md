@@ -25,7 +25,7 @@ Der Standard-Build ist ein nicht indexierbarer Entwurf. Für die abschließende 
 - Texte, interne Ziele, Bilder und JSON-LD werden mit `npm run check` geprüft.
 - Die Live-Startseite wurde im Desktop-Browser visuell geprüft. Alle sechs persönlichen Fotos laden; die vier Leistungsseiten sind erreichbar. Ein visueller Smartphone-Test steht aus.
 - Die API-Projektanlage wurde mit HTTP 403 verweigert. Der autorisierte Browser-Fallback war erfolgreich: Vercel Drop meldet Ready. Live: https://thomas-olesch-homepage.vercel.app/
-- Bereitstellung am 11.10.2026 per Direkt-Upload des statischen Builds. Das Vercel-Projekt ist noch nicht mit GitHub verbunden; Änderungen am Repository werden daher nicht automatisch veröffentlicht.
+- Bereitstellung am 11.10.2026 per Direkt-Upload des statischen Builds. Das Vercel-Projekt ist jetzt mit dem GitHub-Repository verbunden; neue Pushes auf `main` lösen Production Deployments aus.
 - Die öffentliche Prüffassung enthält weiterhin noindex,follow. Die eigene Domain, abschließende SEO-Publikation und automatische Git-Anbindung stehen aus.
 - Die Impressumsanschrift wurde aus der Originalseite übernommen; vor Veröffentlichung auf Aktualität prüfen.
 - Die Datenschutzhinweise entsprechen der geplanten statischen Bereitstellung. Hostingvereinbarungen und tatsächlich aktivierte Dienste müssen vor Veröffentlichung abgeglichen werden.
@@ -36,7 +36,7 @@ Der Standard-Build ist ein nicht indexierbarer Entwurf. Für die abschließende 
 
 Die gewählte Variante 1 ist im Quellcode umgesetzt: ruhiger schwarzer Hintergrund, orange Akzente, große Typografie, pillenförmige Buttons und mehr Freiraum. Das originale Studiofoto geht durch Lighten-Mischung und einen unteren Verlauf in den Hintergrund über. Alle persönlichen Fotos behalten ihre natürlichen Seitenverhältnisse; Kopf und Haare werden nicht durch CSS abgeschnitten. Die vier Leistungsseiten und Rechtstexte nutzen dieselbe Gestaltung.
 
-Build und Offline-Check sind bestanden (8 Seiten, 159 interne Verweise). Dieser neue Designstand ist noch nicht auf der permanenten Vercel-Adresse veröffentlicht oder visuell live geprüft. Der direkte Projekt-Upload ist im verwendbaren Browser nur als Drag-and-drop verfügbar; der Dateiauswahl-Import meldete bei bestehendem Projektnamen einen Konflikt. Für den dauerhaften Git-Deploy fehlt die Freigabe des Homepage-Repositorys für die vorhandene Vercel-GitHub-App. Auf die zusätzliche Berechtigung wurde gewartet; die ursprüngliche Live-Version bleibt bestehen.
+Build und Offline-Check sind bestanden (8 Seiten, 159 interne Verweise). Die vorhandene Vercel-GitHub-App hat Zugriff auf das Homepage-Repository; der erste Git-Deploy wird durch diesen Dokumentations-Commit ausgelöst und anschließend live geprüft.
 
 ## Angebotsentscheidung
 
