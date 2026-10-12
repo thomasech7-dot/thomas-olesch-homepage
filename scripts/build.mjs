@@ -2,8 +2,8 @@ import { cp, mkdir, rm, readFile, writeFile, readdir } from 'node:fs/promises';
 await rm('dist', { recursive: true, force: true });
 await mkdir('dist', { recursive: true });
 await cp('site', 'dist', { recursive: true });
-const siteUrl = process.env.SITE_URL;
-const publish = process.env.SITE_PUBLISH === 'true';
+const siteUrl = process.env.SITE_URL || 'https://thomas-olesch-homepage.vercel.app';
+const publish = process.env.SITE_PUBLISH !== 'false';
 if (publish && !siteUrl) throw new Error('SITE_URL is required for an indexable publication.');
 if (siteUrl) {
   const base = new URL(siteUrl);
@@ -26,8 +26,10 @@ if (siteUrl) {
     }
   }
   await patch('dist');
-  await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(url => `<url><loc>${url}</loc></url>`).join('')}</urlset>`);
+  const today = new Date().toISOString().slice(0, 10);
+  await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(url => `<url><loc>${url}</loc><lastmod>${today}</lastmod></url>`).join('')}</urlset>`);
   await writeFile('dist/robots.txt', `User-agent: *\nAllow: /\nSitemap: ${base.origin}/sitemap.xml\n`);
+  await writeFile('dist/llms.txt', `# Thomas Olesch Copywriting & Webdesign\n\nThomas Olesch erstellt Websites, Landingpages und Texte für Selbstständige und kleinere Unternehmen in Hildesheim, Hannover und remote.\n\n## Wichtige Seiten\n- Startseite: ${base.origin}/\n- Webdesign & Copywriting: ${base.origin}/webdesign-copywriting/\n- SEO & GEO: ${base.origin}/seo-geo/\n- E-Mail-Marketing: ${base.origin}/email-marketing/\n- Social Media Content: ${base.origin}/social-media/\n- Ausbildung & Netzwerk: ${base.origin}/ausbildung-netzwerk/\n\n## Kontakt\nE-Mail: ThomasOlesch.Copywriting@web.de\n`);
 } else {
   await writeFile('dist/robots.txt', 'User-agent: *\nAllow: /\n');
 }
