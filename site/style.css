@@ -57,17 +57,23 @@ p+p{margin-top:22px}
 /* Lighten blends the original black photographic backdrop into the page.
    The source remains intact: no rectangular card, crop or invented hair. */
 .hero-visual img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:0;background:transparent;mix-blend-mode:lighten;-webkit-mask-image:linear-gradient(#000 0%,#000 90%,transparent 100%);mask-image:linear-gradient(#000 0%,#000 90%,transparent 100%)}
-.partner-band{padding:30px 0 48px;background:var(--bg)}
-.partner-inner{display:grid;grid-template-columns:.55fr 1fr;gap:40px;align-items:center;border-block:1px solid var(--line);padding-block:24px}
+.partner-band{padding:28px 0 44px;background:var(--bg);overflow:hidden}
+.partner-inner{display:grid;grid-template-columns:.42fr 1fr;gap:42px;align-items:center;border-block:1px solid var(--line);padding-block:24px}
 .partner-inner p{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;line-height:1.5}
-.partner-logos{display:grid;grid-template-columns:1.25fr .7fr 1.35fr;gap:14px;align-items:stretch}
-.logo-card{min-height:88px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:18px 22px;background:#111;transition:border-color .2s,transform .2s}
-.logo-card:hover{border-color:#ff951f80;transform:translateY(-2px)}
-.logo-card img{max-height:54px;width:auto;max-width:100%;object-fit:contain}
-.logo-card-light{background:#f3f0ea;border-color:#ffffff12}
-.logo-card-light img{max-height:34px}
-.logo-card-emblem img{max-height:64px}
-.logo-card-dark{background:#101010}
+.partner-marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.partner-track{display:flex;width:max-content;gap:14px;animation:logo-drift 24s linear infinite}
+.partner-marquee:hover .partner-track{animation-play-state:paused}
+.partner-set{display:flex;gap:14px;align-items:center}
+.logo-pill{width:230px;height:78px;border:1px solid #ffffff1a;display:flex;align-items:center;justify-content:center;padding:16px 24px;background:#111111c8;box-shadow:inset 0 1px 0 #ffffff08;transition:border-color .2s,transform .2s,background .2s}
+.logo-pill:hover{border-color:#ff951f75;transform:translateY(-2px);background:#161616}
+.logo-pill img{max-width:100%;max-height:42px;width:auto;height:auto;object-fit:contain}
+.logo-pill-dark img{max-height:47px}
+.logo-pill-emblem{width:138px;padding-inline:18px}
+.logo-pill-emblem img{max-height:58px}
+.logo-pill-light{width:276px;background:#f4f1eb;border-color:#f4f1eb;color:#080808}
+.logo-pill-light:hover{background:#fffaf2}
+.logo-pill-light img{max-height:34px}
+@keyframes logo-drift{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}}
 .split-title{display:grid;grid-template-columns:1fr .8fr;gap:100px;align-items:end;margin-bottom:58px}
 .split-title h2{max-width:680px}
 .split-title .intro{margin:0}
@@ -204,7 +210,7 @@ details p{font-size:14px;color:var(--muted);padding-top:19px;padding-right:25px}
   .hero .actions{gap:22px;margin-top:28px}.hero .btn{font-size:13px;padding:16px 21px}
   .hero .text-link{font-size:13px}.hero-meta{font-size:9px;max-width:360px;margin-top:23px}
   .hero-visual{width:100%;max-width:520px;margin-inline:auto}
-  .partner-band{padding:20px 0 35px}.partner-inner{grid-template-columns:1fr;gap:22px;padding-block:22px}.partner-logos{grid-template-columns:1fr;gap:12px}.logo-card{min-height:82px}
+  .partner-band{padding:16px 0 36px}.partner-inner{grid-template-columns:1fr;gap:22px;padding-block:22px}.partner-inner p{max-width:310px}.partner-marquee{width:calc(100vw - 40px);margin-inline:auto}.partner-track{animation-duration:18s}.logo-pill{width:210px;height:72px;padding:14px 20px}.logo-pill img{max-height:38px}.logo-pill-dark img{max-height:43px}.logo-pill-emblem{width:118px}.logo-pill-emblem img{max-height:52px}.logo-pill-light{width:245px}.logo-pill-light img{max-height:30px}
   .section{padding-block:78px}.services{padding-top:45px}.services h2{font-size:clamp(43px,10.5vw,62px)}
   .split-title,.about-grid,.process-grid,.faq-grid,.proof-grid,.contact-grid,.article-grid{grid-template-columns:1fr;gap:35px}
   .split-title{margin-bottom:42px}.intro{font-size:16px}.eyebrow{font-size:9px;margin-bottom:22px}
@@ -227,4 +233,4 @@ details p{font-size:14px;color:var(--muted);padding-top:19px;padding-right:25px}
   .legal{padding-block:55px}.legal h1{font-size:39px}
 }
 @media(max-width:360px){.wrap{width:calc(100% - 32px)}.hero h1{font-size:40px}.brand small{font-size:7px}.hero .actions{gap:18px}.contact-box{padding:22px}.contact-box .btn{font-size:11px;padding-inline:16px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}.partner-track{transform:none!important}}
