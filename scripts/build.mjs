@@ -18,6 +18,8 @@ if (siteUrl) {
       const route = path.replace(/^dist/, '').replace(/index.html$/, '');
       const canonical = new URL(route, base).href;
       if (entry.name !== '404.html') {
+        html = html.replace(/<link\b[^>]*\brel=["']canonical["'][^>]*>/gi, '')
+          .replace(/<meta\b[^>]*\bproperty=["']og:(url|image)["'][^>]*>/gi, '');
         html = html.replace('</head>', `<link rel="canonical" href="${canonical}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${base.origin}/assets/thomas-studio.webp"></head>`);
         if (!/\/(impressum|datenschutz)\//.test(route)) urls.push(canonical);
         if (publish && !/\/(impressum|datenschutz)\//.test(route)) html = html.replace('noindex,follow', 'index,follow');
@@ -26,10 +28,9 @@ if (siteUrl) {
     }
   }
   await patch('dist');
-  const today = new Date().toISOString().slice(0, 10);
-  await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(url => `<url><loc>${url}</loc><lastmod>${today}</lastmod></url>`).join('')}</urlset>`);
+  await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(url => `<url><loc>${url}</loc></url>`).join('')}</urlset>`);
   await writeFile('dist/robots.txt', `User-agent: *\nAllow: /\nSitemap: ${base.origin}/sitemap.xml\n`);
-  await writeFile('dist/llms.txt', `# Thomas Olesch Copywriting & Webdesign\n\nThomas Olesch erstellt Websites, Landingpages und Texte für Selbstständige und kleinere Unternehmen in Hildesheim, Hannover und remote.\n\n## Wichtige Seiten\n- Startseite: ${base.origin}/\n- Webdesign & Copywriting: ${base.origin}/webdesign-copywriting/\n- SEO & GEO: ${base.origin}/seo-geo/\n- E-Mail-Marketing: ${base.origin}/email-marketing/\n- Social Media Content: ${base.origin}/social-media/\n- Ausbildung & Netzwerk: ${base.origin}/ausbildung-netzwerk/\n\n## Kontakt\nE-Mail: ThomasOlesch.Copywriting@web.de\n`);
+  await writeFile('dist/llms.txt', `# Thomas Olesch Copywriting & Webdesign\n\nThomas Olesch erstellt Websites, Landingpages und Texte für Selbstständige und kleinere Unternehmen in Deutschland, Österreich und der Schweiz. Sein Standort ist Hildesheim; die Zusammenarbeit erfolgt remote.\n\n## Wichtige Seiten\n- Startseite: ${base.origin}/\n- Webdesign & Copywriting: ${base.origin}/webdesign-copywriting/\n- SEO & GEO: ${base.origin}/seo-geo/\n- E-Mail-Marketing: ${base.origin}/email-marketing/\n- Social Media Content: ${base.origin}/social-media/\n- Ausbildung & Netzwerk: ${base.origin}/ausbildung-netzwerk/\n\n## Kontakt\nE-Mail: ThomasOlesch.Copywriting@web.de\n`);
 } else {
   await writeFile('dist/robots.txt', 'User-agent: *\nAllow: /\n');
 }
